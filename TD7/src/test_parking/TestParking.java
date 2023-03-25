@@ -5,14 +5,25 @@ import parking.Parking;
 
 public class TestParking {
 
-	public static void main(String[] args) {
-		// Création de quelques voitures
+
+    /**
+     * The main function of the program.
+     *
+     *
+     * @param String[] args Pass command line arguments to the main function
+     *
+     * @return Nothing
+     *
+     *
+     */
+    public static void main(String[] args) {
+		// Crï¿½ation de quelques voitures
 		Voiture v1 = new Voiture(90.0, 2);
 		Voiture v2 = new Voiture(210.0, 6);
 		Voiture v3 = new Voiture(50.0, 2);
 		Voiture v4 = new Voiture(200.0, 5);
-		
-        // Création d'un parking pouvant accueillir 4 voitures
+
+        // Crï¿½ation d'un parking pouvant accueillir 4 voitures
         Parking parking = new Parking(4);
 
         // Garer les voitures dans le parking
@@ -21,13 +32,13 @@ public class TestParking {
         parking.garer(v3, 2);
         parking.garer(v4, 3);
 
-        // Libérer une place dans le parking et afficher la voiture libérée
-        System.out.println("La voiture libérée est : " + parking.liberer(3));
+        // Libï¿½rer une place dans le parking et afficher la voiture libï¿½rï¿½e
+        System.out.println("La voiture libï¿½rï¿½e est : " + parking.liberer(3));
 
         // Chercher l'emplacement de la voiture v2 dans le parking
-        System.out.println("La voiture n°2 se situe à l'emplacement : " + parking.chercher(v2) + "\n");
+        System.out.println("La voiture nï¿½2 se situe ï¿½ l'emplacement : " + parking.chercher(v2) + "\n");
 
-        // Afficher l'état du parking
+        // Afficher l'ï¿½tat du parking
         System.out.println(parking.toString());
     }
 }

@@ -7,20 +7,38 @@ import boite.Objet;
 
 public class TestBoite {
 
-	@SuppressWarnings("unused")
-	public static void main(String[] args) {
+
+    /**
+     * The main function of the program.
+     *
+     *
+     * @param String[] args Pass command line arguments to the main function
+     *
+     * @return The string:
+     *
+     *
+     */
+    @SuppressWarnings("unused")
+    public static void main(String[] args) {
+
+        // Create a box with a green color
+        Boite<String> b1 = new Boite<String>(Color.green);
+
+        // Create a box with a blue color and an object
         Objet o1 = new Objet(Color.green);
-        Objet o2 = new Objet(Color.blue);
-        Objet o3 = new Objet(Color.red);
-        Objet o4 = new Objet(Color.yellow);
-        
-        Boite b1 = new Boite(Color.green);
-        Boite b2 = new Boite(Color.blue, o1);
-        Boite b3 = new Boite(Color.red, b2);
-        Boite b4 = new Boite(Color.yellow, o3, b3);
-        b1.ajouteBoite(b4);
-        
-        // test d'affichage
+        Boite<String> b2 = new Boite<String>(Color.blue, o1);
+
+        // Create a box with a red color and add the previous box as a sub-box
+        Boite<String> b3 = new Boite<String>(Color.red, b2);
+
+        // Create a box with a yellow color, an object, and add the previous box as a sub-box
+        Objet o3 = new Objet(Color.yellow);
+        Boite<String> b4 = new Boite<String>(Color.yellow, o3, b3);
+
+        // Print the number of sub-boxes for each box
+        System.out.println(b1);
+        System.out.println(b2);
+        System.out.println(b3);
         System.out.println(b4);
     }
 }
